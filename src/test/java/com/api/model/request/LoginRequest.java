@@ -25,4 +25,24 @@ public class LoginRequest {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public static class LoginRequestBuilder {
+
+        private String username;
+        private String password;
+
+        public LoginRequestBuilder buildUsername(String username) {
+            this.username = username;
+            return this;
+        }
+
+        public LoginRequestBuilder buildPassword(String password) {
+            this.password = password;
+            return this;
+        }
+
+        public LoginRequest build() {
+            return new LoginRequest(username, password);
+        }
+    }
 }

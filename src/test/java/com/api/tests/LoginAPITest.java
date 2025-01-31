@@ -34,8 +34,10 @@ public class LoginAPITest {
     public void loginTest() {
 
         AuthService authService = new AuthService();
-        LoginRequest loginRequest = new LoginRequest("kamisettyj75"
-                , "g@Dt3K@FDFK7c9K");
+        LoginRequest loginRequest = new LoginRequest.LoginRequestBuilder()
+                .buildUsername("kamisettyj75")
+                .buildPassword("g@Dt3K@FDFK7c9K")
+                .build();
 
         Response response = authService.login(loginRequest);
         //convert the JSON to java using .as

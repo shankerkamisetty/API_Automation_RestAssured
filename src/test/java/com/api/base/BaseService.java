@@ -1,7 +1,6 @@
 package com.api.base;
 
 
-import com.api.model.request.LoginRequest;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -26,6 +25,16 @@ public class BaseService {
                 .contentType(ContentType.JSON)
                 .body(payload)
                 .post(endpoint);
+    }
+
+    public void setAuthToken(String authToken) {
+        requestSpecification
+                .header("Authorization", "Bearer " + authToken);
+    }
+
+    public Response getRequest(String endpoint) {
+        return requestSpecification
+                .get(endpoint);
     }
 
 

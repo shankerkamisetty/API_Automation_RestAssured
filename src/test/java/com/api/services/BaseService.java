@@ -1,6 +1,7 @@
 package com.api.services;
 
 
+import com.api.filters.LoggingFilter;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -11,6 +12,10 @@ public class BaseService {
 
     //    BASE URI
     private static final String BASE_URL = "http://64.227.160.186:8080";
+
+    static {
+        RestAssured.filters(new LoggingFilter());
+    }
 
     //    CREATING REQUEST
     private final RequestSpecification requestSpecification;

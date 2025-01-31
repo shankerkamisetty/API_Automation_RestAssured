@@ -1,0 +1,11 @@
+2025-02-01 01:21:04 [main] INFO  com.api.listeners.TestListener - Test Suite started
+2025-02-01 01:21:04 [main] INFO  com.api.listeners.TestListener - Test Started
+2025-02-01 01:21:07 [main] INFO  com.api.listeners.TestListener - Test Passed userProfileTest
+2025-02-01 01:21:07 [main] INFO  com.api.listeners.TestListener - Description Verify the GET request to get a user profile is working
+2025-02-01 01:21:07 [main] INFO  com.api.listeners.TestListener - Test Started
+2025-02-01 01:21:08 [main] INFO  com.api.listeners.TestListener - Test Passed userProfileTest
+2025-02-01 01:21:08 [main] INFO  com.api.listeners.TestListener - Description Verify PUT Request to update user profile is working
+2025-02-01 01:21:08 [main] INFO  com.api.listeners.TestListener - Test Started
+2025-02-01 01:21:08 [main] INFO  com.api.listeners.TestListener - Test Passed loginTest
+2025-02-01 01:21:08 [main] INFO  com.api.listeners.TestListener - Description Verify if login API is working
+2025-02-01 01:21:08 [main] INFO  com.api.listeners.TestListener - Test Suite completed!

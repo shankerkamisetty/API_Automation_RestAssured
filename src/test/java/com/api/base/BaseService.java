@@ -19,7 +19,14 @@ public class BaseService {
         this.requestSpecification = RestAssured.given().baseUri(BASE_URL);
     }
 
-    //    HANDLING RESPONSE
+    //Set authToken to header
+    public void setAuthToken(String authToken) {
+        requestSpecification
+                .header("Authorization", "Bearer " + authToken);
+    }
+
+    //    HANDLING REQUESTS
+    //POST Request
     public Response postRequest(Object payload, String endpoint) {
         return requestSpecification
                 .contentType(ContentType.JSON)
@@ -27,11 +34,15 @@ public class BaseService {
                 .post(endpoint);
     }
 
-    public void setAuthToken(String authToken) {
-        requestSpecification
-                .header("Authorization", "Bearer " + authToken);
+    //PUT Request
+    public Response putRequest(Object payload, String endpoint) {
+        return requestSpecification
+                .contentType(ContentType.JSON)
+                .body(payload)
+                .put(endpoint);
     }
 
+    //GET Request
     public Response getRequest(String endpoint) {
         return requestSpecification
                 .get(endpoint);

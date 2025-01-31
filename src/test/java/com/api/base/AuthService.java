@@ -11,8 +11,8 @@ public class AuthService extends BaseService {
     private static final String BASE_PATH = "/api/auth/";
 
     public static String getAuthToken() {
-        AuthService authService = new AuthService();
 
+        AuthService authService = new AuthService();
         LoginRequest loginRequest = new LoginRequest.LoginRequestBuilder()
                 .buildUsername("kamisettyj75")
                 .buildPassword("g@Dt3K@FDFK7c9K")

@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class GetUserProfileTest {
 
-    @Test
+    @Test(description = "Verify the GET request to get a user profile is working")
     public void userProfileTest() {
 
         String token = AuthService.getAuthToken();

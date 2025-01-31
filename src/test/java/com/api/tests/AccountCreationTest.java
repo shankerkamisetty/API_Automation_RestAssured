@@ -1,9 +1,10 @@
 package com.api.tests;
 
-import com.api.base.AuthService;
 import com.api.model.request.SignUpRequest;
+import com.api.services.AuthService;
 import io.restassured.response.Response;
 
+//@Test
 public class AccountCreationTest {
 
     public void signUp() {
@@ -11,12 +12,12 @@ public class AccountCreationTest {
         AuthService authService = new AuthService();
 
         SignUpRequest signUpRequest = new SignUpRequest.SignUpRequestBuilder()
-                .getSetUsername("adi1234")
-                .getSetPassword("adi1234")
-                .getSetFirstName("Adi")
-                .getSetLastName("Test")
-                .getSetEmail("test@test.com")
-                .getSetMobileNumber("9123456789")
+                .buildUsername("adi1234")
+                .buildPassword("adi1234")
+                .buildFirstName("Adi")
+                .buildLastName("Test")
+                .buildEmail("test@test.com")
+                .buildMobileNumber("9123456789")
                 .build();
 
         Response response = authService.signup(signUpRequest);

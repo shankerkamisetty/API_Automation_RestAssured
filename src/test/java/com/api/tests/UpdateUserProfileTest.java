@@ -1,9 +1,9 @@
 package com.api.tests;
 
-import com.api.base.AuthService;
-import com.api.base.UserManagementService;
 import com.api.model.request.UpdateUserProfileRequest;
 import com.api.model.response.UserProfileResponse;
+import com.api.services.AuthService;
+import com.api.services.UserManagementService;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;

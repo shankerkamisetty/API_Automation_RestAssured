@@ -1,4 +1,4 @@
-package com.api.base;
+package com.api.services;
 
 import com.api.model.request.LoginRequest;
 import com.api.model.request.SignUpRequest;

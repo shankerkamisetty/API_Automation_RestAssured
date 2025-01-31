@@ -1,7 +1,6 @@
-package com.api.base;
+package com.api.services;
 
 import io.restassured.response.Response;
-
 
 public class UserManagementService extends BaseService {
 

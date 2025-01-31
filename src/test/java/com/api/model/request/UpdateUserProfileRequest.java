@@ -6,11 +6,11 @@ public class UpdateUserProfileRequest {
     private String mobileNumber;
     private String email;
 
-    public UpdateUserProfileRequest(String firstName, String lastName, String mobileNumber, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.mobileNumber = mobileNumber;
-        this.email = email;
+    private UpdateUserProfileRequest(UpdateProfileRequestBuilder builder) {
+        this.firstName = builder.firstName;
+        this.lastName = builder.lastName;
+        this.mobileNumber = builder.mobileNumber;
+        this.email = builder.email;
     }
 
     public String getFirstName() {
@@ -72,7 +72,7 @@ public class UpdateUserProfileRequest {
         }
 
         public UpdateUserProfileRequest build() {
-            return new UpdateUserProfileRequest(firstName, lastName, mobileNumber, email);
+            return new UpdateUserProfileRequest(this);
         }
     }
 }

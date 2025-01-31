@@ -8,13 +8,13 @@ public class SignUpRequest {
     private String email;
     private String username;
 
-    public SignUpRequest(String username, String password, String email, String firstName, String lastName, String mobileNumber) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.mobileNumber = mobileNumber;
+    private SignUpRequest(SignUpRequestBuilder builder) {
+        this.username = builder.username;
+        this.password = builder.password;
+        this.email = builder.email;
+        this.firstName = builder.firstName;
+        this.lastName = builder.lastName;
+        this.mobileNumber = builder.mobileNumber;
     }
 
     public String getFirstName() {
@@ -75,39 +75,38 @@ public class SignUpRequest {
         private String mobileNumber;
 
 
-        public SignUpRequestBuilder getSetUsername(String username) {
+        public SignUpRequestBuilder buildUsername(String username) {
             this.username = username;
             return this;
         }
 
-        public SignUpRequestBuilder getSetPassword(String password) {
+        public SignUpRequestBuilder buildPassword(String password) {
             this.password = password;
             return this;
         }
 
-        public SignUpRequestBuilder getSetEmail(String email) {
+        public SignUpRequestBuilder buildEmail(String email) {
             this.email = email;
             return this;
         }
 
-        public SignUpRequestBuilder getSetFirstName(String firstName) {
+        public SignUpRequestBuilder buildFirstName(String firstName) {
             this.firstName = firstName;
             return this;
         }
 
-        public SignUpRequestBuilder getSetLastName(String lastName) {
+        public SignUpRequestBuilder buildLastName(String lastName) {
             this.lastName = lastName;
             return this;
         }
 
-        public SignUpRequestBuilder getSetMobileNumber(String mobileNumber) {
+        public SignUpRequestBuilder buildMobileNumber(String mobileNumber) {
             this.mobileNumber = mobileNumber;
             return this;
         }
 
         public SignUpRequest build() {
-            return new SignUpRequest(username, password, email
-                    , firstName, lastName, mobileNumber);
+            return new SignUpRequest(this);
         }
 
 

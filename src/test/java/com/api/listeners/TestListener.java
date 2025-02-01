@@ -19,13 +19,13 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        logger.info("Test Started");
+        logger.info("Test Started, Test Name: " + result.getMethod().getMethodName());
+        logger.info("Description: " + result.getMethod().getDescription());
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        logger.info("Test Passed " + result.getMethod().getMethodName());
-        logger.info("Description " + result.getMethod().getDescription());
+        logger.info("Test PASSED: " + result.getMethod().getMethodName());
     }
 
     @Override
@@ -42,7 +42,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        logger.info("Test Skipped!");
+        logger.info("Test Skipped!" + result.getMethod().getMethodName());
     }
 
     @Override

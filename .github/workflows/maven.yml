@@ -13,6 +13,9 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+  schedule:
+    -cron: 00 18 * * *
+    -cron: 00 3 * * *
 
 jobs:
   build:
@@ -30,3 +33,12 @@ jobs:
 
       - name: Execute Tests
         run: mvn clean test -DsuiteXmlFile=suite.xml
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.6.0
+        with:
+          # Artifact name
+          name: Logs
+          path: logs/
+
+

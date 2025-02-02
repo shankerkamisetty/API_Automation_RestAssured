@@ -35,8 +35,8 @@ public class LoginAPITest {
 
         AuthService authService = new AuthService();
         LoginRequest loginRequest = new LoginRequest.LoginRequestBuilder()
-                .buildUsername("kamisettyj75")
-                .buildPassword("g@Dt3K@FDFK7c9K")
+                .buildUsername("sktest1234")
+                .buildPassword("sktest1234")
                 .build();
 
         Response response = authService.login(loginRequest);

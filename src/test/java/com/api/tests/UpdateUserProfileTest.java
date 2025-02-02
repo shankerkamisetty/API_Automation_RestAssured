@@ -18,9 +18,9 @@ public class UpdateUserProfileTest {
         UserManagementService userManagementService = new UserManagementService();
 
         UpdateUserProfileRequest updateRequestPayload = new UpdateUserProfileRequest.UpdateProfileRequestBuilder()
-                .buildFirstName("Shanker")
-                .buildLastName("Kamisetty")
-                .buildEmail("jyothinba@gmail.com")
+                .buildFirstName("SK")
+                .buildLastName("Test")
+                .buildEmail("skautomate7@gmail.com")
                 .buildMobileNumber("9123456789")
                 .build();
         Response response = userManagementService.updateProfile(updateRequestPayload, token);
